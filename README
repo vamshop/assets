@@ -1,0 +1,62 @@
+Assets Management Plugin
+-------------------------
+
+VamShop Assets Management Plugin
+
+Installation using composer:
+
+1. Install package from your VamShop root directory (where composer.json located):
+
+composer require vamshop/assets
+
+2. Activate plugin at Admin - Extensions - Plugins - Assets
+
+
+Manual Installation:
+
+
+1. Download or clone repository http://github.com/vamshop/assets
+
+2. Copy files from archive analytics-master folder to /app/plugins/Assets folder
+
+3. Activate plugin at Admin - Extensions - Plugins - Assets
+
+
+## Usage
+
+Once activated successfully, three new buttons (Reload, Browse, and Upload)
+and a new "Assets" tab will be added to the `edit` action of the following
+pages: Nodes, Blocks, and Types.
+
+Clicking on the "Upload" button will bring up a popup window, where you can
+select and upload the asset file.
+
+### Featured Image
+
+When ticking the "Featured Image" checkbox, the asset will be automatically
+grouped under the "Featured Image" record.
+
+A simple helper method (AssetsImageHelper::featured) is included for basic
+markup generation.
+
+### Adapter
+
+Two adapters are provided in the plugin:
+
+	* Local Attachment
+
+	  Default storage adapter.  When using this adapter, assets will be
+	  stored under `APP/webroot/assets` directory.
+
+	* Local Attachment (Legacy)
+
+	  This adapters mimics the original Croogo behavior, where images are
+	  stored under `APP/webroot/uploads` directory.
+
+# Dependencies
+
+- [Imagine](https://github.com/CakeDC/Imagine) plugin which is a CakePHP
+  friendly wrapper for [Imagine image processing library](http://imagine.readthedocs.org/).
+  Tested with 1.0.1-3-g500a559
+- [Gaufrette](https://github.com/Knplabs/Gaufrette) library
+

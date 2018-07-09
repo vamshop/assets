@@ -1,0 +1,34 @@
+{
+	"name": "vamshop/assets",
+	"type": "cakephp-plugin",
+	"description": "VamShop Assets Management Plugin",
+	"homepage": "http://github.com/vamshop/assets",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Rachman Chavik",
+			"email": "oss@xintesa.com",
+			"homepage": "http://xintesa.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.3.0",
+		"vamshop/vamshop-core": "^3.0.0",
+		"knplabs/gaufrette": "v0.1.8",
+		"intervention/image": "^2.3"
+	},
+	"suggest": {
+		"char0n/ffmpeg-php": "FFMpeg php"
+	},
+	"extra": {
+		"branch-alias": {
+			"3.0-wip-dev": "3.0.x-dev"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Assets\\": "src"
+		}
+	}
+}
