@@ -1,6 +1,6 @@
 The MIT License
 
-Assets : Asset Management plugin for Croogo (http://www.vamshop.com)
+Assets : Asset Management plugin for Vamshop (http://www.vamshop.com)
 Copyright 2013, Rachman Chavik <contact@xintesa.com> and other contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a

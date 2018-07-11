@@ -22,7 +22,7 @@ class AssetUsagesTable extends Table {
 			'foreignKey' => 'asset_id',
 		]);
 
-		$this->addBehavior('Croogo/Core.Trackable');
+		$this->addBehavior('Vamshop/Core.Trackable');
 	}
 
 	public function beforeSave(Event $event, EntityInterface $entity, ArrayObject $options) {

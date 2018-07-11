@@ -2,8 +2,8 @@
 
 namespace Assets\Controller;
 
-use Croogo\Core\Controller\Admin\AppController as CroogoController;
+use Vamshop\Core\Controller\Admin\AppController as VamshopController;
 
-class AppController extends CroogoController {
+class AppController extends VamshopController {
 
 }

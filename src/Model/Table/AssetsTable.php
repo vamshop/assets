@@ -6,7 +6,7 @@ use ArrayObject;
 use Cake\Event\Event;
 use Cake\Datasource\EntityInterface;
 use Cake\Validation\Validator;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 class AssetsTable extends Table {
 
@@ -38,7 +38,7 @@ class AssetsTable extends Table {
 
 		$this->addBehavior('Timestamp');
 		$this->addBehavior('Search.Search');
-		$this->addBehavior('Croogo/Core.Trackable');
+		$this->addBehavior('Vamshop/Core.Trackable');
 
 	}
 
@@ -56,7 +56,7 @@ class AssetsTable extends Table {
 		if (!$entity->path) {
 			$entity->path = '';
 		}
-		$Event = Croogo::dispatchEvent('FileStorage.beforeSave', $this, array(
+		$Event = Vamshop::dispatchEvent('FileStorage.beforeSave', $this, array(
 			'record' => $entity,
 			'adapter' => $adapter,
 		));
@@ -67,7 +67,7 @@ class AssetsTable extends Table {
 	}
 
 	public function beforeDelete(Event $event, EntityInterface $entity, ArrayObject $options = null) {
-		$Event = Croogo::dispatchEvent('FileStorage.beforeDelete', $this, array(
+		$Event = Vamshop::dispatchEvent('FileStorage.beforeDelete', $this, array(
 			'record' => $entity,
 		));
 		if ($Event->isStopped()) {

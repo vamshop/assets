@@ -3,8 +3,8 @@
 namespace Assets\View\Helper;
 
 use Cake\Utility\Hash;
-use Croogo\Core\Croogo;
-use Croogo\Core\View\Helper\ImageHelper;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\View\Helper\ImageHelper;
 
 class AssetsImageHelper extends ImageHelper {
 
@@ -29,7 +29,7 @@ class AssetsImageHelper extends ImageHelper {
 		}
 		$result = parent::resize($path, $width, $height, $options, $htmlAttributes, $return);
 		$record = compact('result', 'path', 'width', 'height', 'aspect', 'htmlAttributes', 'adapter');
-		Croogo::dispatchEvent('Assets.AssetsImageHelper.resize', $this->_View, compact('record'));
+		Vamshop::dispatchEvent('Assets.AssetsImageHelper.resize', $this->_View, compact('record'));
 		return $result;
 	}
 

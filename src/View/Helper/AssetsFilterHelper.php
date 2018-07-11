@@ -14,7 +14,7 @@ class AssetsFilterHelper extends Helper {
 
 	public $helpers = array(
 		'Html',
-		'Croogo/Nodes.Nodes',
+		'Vamshop/Nodes.Nodes',
 	);
 
 	public function __construct(View $view, $settings = array()) {

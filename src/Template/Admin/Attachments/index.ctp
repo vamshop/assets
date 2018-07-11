@@ -1,8 +1,8 @@
 <?php
 
-$this->Croogo->adminScript('Assets.admin');
+$this->Vamshop->adminScript('Assets.admin');
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs
 	->add(__d('croogo', 'Attachments'), $this->request->getUri()->getPath());
@@ -15,7 +15,7 @@ if (!empty($this->request->query)) {
 
 $this->append('action-buttons');
 
-echo $this->Croogo->adminAction(
+echo $this->Vamshop->adminAction(
 	__d('croogo', 'New ' . __d('croogo', 'Attachment')),
 	array_merge(array('?' => $query), array('action' => 'add')),
 	array('button' => 'success')
@@ -44,7 +44,7 @@ $this->append('table-heading');
 	echo $this->Html->tag('thead', $tableHeaders);
 $this->end();
 
-$this->append('search', $this->element('Croogo/Core.admin/search'));
+$this->append('search', $this->element('Vamshop/Core.admin/search'));
 
 $this->append('table-body');
 	$rows = array();
@@ -56,13 +56,13 @@ $this->append('table-body');
 		$assetCount = $attachment->asset_count . '&nbsp;';
 		if ($mimeType == 'image') {
 			$detailUrl['?']['id'] = $attachment->id;
-			$actions[] = $this->Croogo->adminRowAction('', $detailUrl, array(
+			$actions[] = $this->Vamshop->adminRowAction('', $detailUrl, array(
 				'icon' => 'suitcase',
 				'data-toggle' => 'browse',
 				'tooltip' => __d('assets', 'View other sizes'),
 			));
 
-			$actions[] = $this->Croogo->adminRowActions($attachment->id);
+			$actions[] = $this->Vamshop->adminRowActions($attachment->id);
 			$resizeUrl = array_merge(
 				array(
 					'action' => 'resize',
@@ -72,7 +72,7 @@ $this->append('table-body');
 				array('?' => $query)
 			);
 
-			$actions[] = $this->Croogo->adminRowAction('', $resizeUrl, array(
+			$actions[] = $this->Vamshop->adminRowAction('', $resizeUrl, array(
 				'icon' => $this->Theme->getIcon('resize'),
 				'tooltip' => __d('croogo', 'Resize this item'),
 				'data-toggle' => 'resize-asset'
@@ -83,13 +83,13 @@ $this->append('table-body');
 			array('action' => 'edit', $attachment->id),
 			array('?' => $query)
 		);
-		$actions[] = $this->Croogo->adminRowAction('', $editUrl, array(
+		$actions[] = $this->Vamshop->adminRowAction('', $editUrl, array(
 			'icon' => 'update',
 			'tooltip' => __d('croogo', 'Edit this item'),
 		));
 		$deleteUrl = array('action' => 'delete', $attachment->id);
 		$deleteUrl = array_merge(array('?' => $query), $deleteUrl);
-		$actions[] = $this->Croogo->adminRowAction('', $deleteUrl, array(
+		$actions[] = $this->Vamshop->adminRowAction('', $deleteUrl, array(
 			'icon' => 'delete',
 			'tooltip' => __d('croogo', 'Remove this item'),
 			'escapeTitle' => false,
@@ -117,7 +117,7 @@ $this->append('table-body');
 			break;
 			default:
 				$thumbnail = sprintf('%s %s (%s)',
-					$this->Html->image('Croogo/Core./img/icons/page_white.png', [
+					$this->Html->image('Vamshop/Core./img/icons/page_white.png', [
 						'alt' => $mimeType,
 					]),
 					$mimeType,

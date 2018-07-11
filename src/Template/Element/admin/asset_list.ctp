@@ -114,7 +114,7 @@ foreach ($attachments as $attachment):
 			'controls' => true,
 		]);
 	else:
-		$imgUrl = $this->Html->image('Croogo/Core./img/icons/page_white.png') . ' ';
+		$imgUrl = $this->Html->image('Vamshop/Core./img/icons/page_white.png') . ' ';
 		$filename = $attachment->asset->filename;
 		$thumbnail = $imgUrl . $this->Html->link($this->Text->truncate($filename, 15),
 			$attachment->asset->path, array(
@@ -166,13 +166,13 @@ foreach ($attachments as $attachment):
 	$row[] = $this->Number->toReadableSize($attachment->asset->filesize);
 
 	if ($mimeType === 'image'):
-		$action[] = $this->Croogo->adminRowAction('', $detailUrl, array(
+		$action[] = $this->Vamshop->adminRowAction('', $detailUrl, array(
 			'icon' => 'suitcase',
 			'data-toggle' => 'browse',
 			'tooltip' => __d('assets', 'View other sizes'),
 		));
 
-		$action[] = $this->Croogo->adminRowAction('', $changeTypeUrl, array(
+		$action[] = $this->Vamshop->adminRowAction('', $changeTypeUrl, array(
 			'icon' => 'star',
 			'class' => 'set-featured-image',
 			'data-pk' => $attachment->asset_usage->id,
@@ -180,7 +180,7 @@ foreach ($attachments as $attachment):
 		));
 	endif;
 
-	$action[] = $this->Croogo->adminRowAction('', $unregisterUsageUrl, array(
+	$action[] = $this->Vamshop->adminRowAction('', $unregisterUsageUrl, array(
 		'icon' => 'delete',
 		'class' => 'unregister-usage red',
 		'data-id' => $attachment->asset_usage->id,
@@ -212,7 +212,7 @@ $uploadUrl = array(
 
 if (!isset($_assetButtons)):
 $this->append('action-buttons');
-	echo $this->Croogo->adminAction(__d('assets', 'Reload'),
+	echo $this->Vamshop->adminAction(__d('assets', 'Reload'),
 		$browseUrl,
 		array(
 			'div' => false,
@@ -222,7 +222,7 @@ $this->append('action-buttons');
 			'tooltip' => __d('assets', 'Reload asset list for this content'),
 		)
 	);
-	echo $this->Croogo->adminAction(__d('assets', 'Browse'),
+	echo $this->Vamshop->adminAction(__d('assets', 'Browse'),
 		$browseUrl,
 		array(
 			'div' => false,
@@ -232,7 +232,7 @@ $this->append('action-buttons');
 			'tooltip' => __d('assets', 'Browse available assets'),
 		)
 	);
-	echo $this->Croogo->adminAction(__d('assets', 'Upload'),
+	echo $this->Vamshop->adminAction(__d('assets', 'Upload'),
 		$uploadUrl,
 		array(
 			'div' => false,

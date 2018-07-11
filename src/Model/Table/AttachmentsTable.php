@@ -10,7 +10,7 @@ use Cake\Log\LogTrait;
 use Cake\ORM\Query;
 use Cake\Utility\Hash;
 use Cake\Validation\Validator;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 use RuntimeException;
 use Assets\Utility\StorageManager;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -47,7 +47,7 @@ class AttachmentsTable extends Table {
 		]);
 
 		$this->addBehavior('Timestamp');
-		$this->addBehavior('Croogo/Core.Trackable', [
+		$this->addBehavior('Vamshop/Core.Trackable', [
 			'fields' => [
 				'created_by' => 'created_by',
 				'updated_by' => 'modified_by',

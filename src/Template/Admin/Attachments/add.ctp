@@ -2,7 +2,7 @@
 
 use Assets\Utility\StorageManager;
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Html->css(array(
 	'Assets.jquery.fileupload',
@@ -11,7 +11,7 @@ $this->Html->css(array(
 	'block' => true,
 ));
 
-$this->Croogo->adminScript(array(
+$this->Vamshop->adminScript(array(
 //	'Assets.fileupload/vendor/jquery.ui.widget',
 	'Assets.fileupload/tmpl.min.js',
 	'Assets.fileupload/load-image.all.min',
@@ -56,7 +56,7 @@ $model = isset($this->request->query['model']) ? $this->request->query['model'] 
 $foreignKey = isset($this->request->query['foreign_key']) ? $this->request->query['foreign_key'] : null;
 
 $this->append('tab-heading');
-	echo $this->Croogo->adminTab(__d('croogo', 'Upload'), '#attachment-upload');
+	echo $this->Vamshop->adminTab(__d('croogo', 'Upload'), '#attachment-upload');
 $this->end();
 
 $this->append('tab-content');
@@ -128,7 +128,7 @@ $this->append('panels');
 			'class' => 'btn btn-danger',
 		));
 	echo $this->Html->endBox();
-	echo $this->Croogo->adminBoxes();
+	echo $this->Vamshop->adminBoxes();
 $this->end();
 
 $editorMode = isset($formUrl['editor']) ? $formUrl['editor'] : 0;

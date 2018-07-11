@@ -5,7 +5,7 @@ namespace Assets\Controller\Admin;
 use Cake\Event\Event;
 use Cake\Log\Log;
 use Cake\Utility\Hash;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 use Assets\Controller\Admin\AppController;
 
 /**
@@ -29,7 +29,7 @@ class AttachmentsController extends AppController {
  * @access public
  */
 	public $helpers = [
-		'Croogo/FileManager.FileManager',
+		'Vamshop/FileManager.FileManager',
 		'Text',
 		'Assets.AssetsImage'
 	];
@@ -195,7 +195,7 @@ class AttachmentsController extends AppController {
 				$errors = $entity->errors();
 				if (empty($errors) && $attachment) {
 					$eventKey = 'Controller.AssetsAttachment.newAttachment';
-					Croogo::dispatchEvent($eventKey, $this, compact('attachment'));
+					Vamshop::dispatchEvent($eventKey, $this, compact('attachment'));
 				} else {
 					Log::error('Failed saving attachments:');
 					Log::error(print_r($errors, true));

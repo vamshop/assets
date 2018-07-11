@@ -2,7 +2,7 @@
 
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 use Assets\Utility\StorageManager;
 
 if (!Configure::read('Assets.installed')) {
@@ -30,7 +30,7 @@ Configure::write('Wysiwyg.attachmentBrowseUrl', array(
 
 Configure::write('Wysiwyg.uploadsPath', '');
 
-Croogo::mergeConfig('Wysiwyg.actions', array(
+Vamshop::mergeConfig('Wysiwyg.actions', array(
 	'Admin/Attachments/browse',
 ));
 
@@ -57,19 +57,19 @@ $actions = [
 $tabTitle = __d('assets', 'Assets');
 foreach ($actions as $action):
 	list($controller, ) = explode('/', $action);
-	Croogo::hookAdminTab($action, $tabTitle, 'Assets.admin/asset_list');
-	Croogo::hookHelper($controller, 'Assets.AssetsAdmin');
+	Vamshop::hookAdminTab($action, $tabTitle, 'Assets.admin/asset_list');
+	Vamshop::hookHelper($controller, 'Assets.AssetsAdmin');
 endforeach;
 
 // TODO: make this configurable via backend
 $models = [
-	'Croogo/Blocks.Blocks',
-	'Croogo/Contacts.Contacts',
-	'Croogo/Nodes.Nodes',
-	'Croogo/Taxonomy.Types',
+	'Vamshop/Blocks.Blocks',
+	'Vamshop/Contacts.Contacts',
+	'Vamshop/Nodes.Nodes',
+	'Vamshop/Taxonomy.Types',
 ];
 foreach ($models as $model) {
-	Croogo::hookBehavior($model, 'Assets.LinkedAssets', ['priority' => 9]);
+	Vamshop::hookBehavior($model, 'Assets.LinkedAssets', ['priority' => 9]);
 }
 
-Croogo::hookHelper('*', 'Assets.AssetsFilter');
+Vamshop::hookHelper('*', 'Assets.AssetsFilter');

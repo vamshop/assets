@@ -2,7 +2,7 @@
 
 use Cake\Utility\Hash;
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->append('page-heading');
 ?>
@@ -15,9 +15,9 @@ $this->end();
 
 $this->Breadcrumbs->add(__d('croogo', 'Attachments'));
 
-$this->Croogo->adminScript([
-	'Croogo/Wysiwyg.wysiwyg',
-	'Croogo/Ckeditor.wysiwyg',
+$this->Vamshop->adminScript([
+	'Vamshop/Wysiwyg.wysiwyg',
+	'Vamshop/Ckeditor.wysiwyg',
 	'Assets.admin',
 ]);
 
@@ -45,7 +45,7 @@ if (!empty($this->request->query['all'])):
 endif;
 
 $this->append('action-buttons');
-	echo $this->Croogo->adminAction(
+	echo $this->Vamshop->adminAction(
 		__d('croogo', 'New Attachment'),
 		array_merge(
 			array('controller' => 'Attachments', 'action' => 'add', 'editor' => 1),
@@ -70,7 +70,7 @@ $this->append('action-buttons');
 	else:
 		$listTitle = __d('assets', 'List Attachments');
 	endif;
-	echo $this->Croogo->adminAction($listTitle, $listUrl, array(
+	echo $this->Vamshop->adminAction($listTitle, $listUrl, array(
 		'button' => 'success',
 	));
 $this->end();
@@ -107,7 +107,7 @@ $this->append('table-body');
 				));
 			} else {
 				$actions[] = $this->Html->link('', '#', array(
-					'onclick' => "Croogo.Wysiwyg.choose('" . $attachment->slug . "');",
+					'onclick' => "Vamshop.Wysiwyg.choose('" . $attachment->slug . "');",
 					'icon' => 'attach',
 					'tooltip' => __d('croogo', 'Insert')
 				));
@@ -135,7 +135,7 @@ $this->append('table-body');
 		if (!isset($this->request->query['all']) &&
 			!isset($this->request->query['asset_id'])
 		) {
-			$actions[] = $this->Croogo->adminRowAction('', $deleteUrl, array(
+			$actions[] = $this->Vamshop->adminRowAction('', $deleteUrl, array(
 				'icon' => $this->Theme->getIcon('delete'),
 				'tooltip' => __d('croogo', 'Delete Attachment')
 				),
@@ -144,7 +144,7 @@ $this->append('table-body');
 		} elseif (isset($this->request->query['manage']) &&
 			isset($this->request->query['asset_id'])
 		) {
-			$actions[] = $this->Croogo->adminRowAction('', $deleteAssetUrl, array(
+			$actions[] = $this->Vamshop->adminRowAction('', $deleteAssetUrl, array(
 				'icon' => 'delete',
 				'icon' => $this->Theme->getIcon('delete'),
 				'tooltip' => __d('croogo', 'Delete Attachment version')
@@ -160,7 +160,7 @@ $this->append('table-body');
 				array('action' => 'resize', $attachment->id, 'ext' => 'json'),
 				array('?' => $query)
 			);
-			$actions[] = $this->Croogo->adminRowAction('', $resizeUrl, array(
+			$actions[] = $this->Vamshop->adminRowAction('', $resizeUrl, array(
 				'icon' => $this->Theme->getIcon('resize'),
 				'tooltip' => __d('croogo', 'Resize this item'),
 				'data-toggle' => 'resize-asset'
@@ -185,7 +185,7 @@ $this->append('table-body');
 							'foreign_key' => $foreignKey,
 						)
 					), $query);
-					$actions[] = $this->Croogo->adminRowAction('', $addUrl, array(
+					$actions[] = $this->Vamshop->adminRowAction('', $addUrl, array(
 						'icon' => 'create',
 						'method' => 'post',
 					));
@@ -250,7 +250,7 @@ $this->append('table-body');
 			]);
 
 		} else {
-			$thumbnail = $this->Html->image('Croogo/Core./img/icons/page_white.png') . ' ' . $attachment->asset->mime_type . ' (' . $this->FileManager->filename2ext($attachment->slug) . ')';
+			$thumbnail = $this->Html->image('Vamshop/Core./img/icons/page_white.png') . ' ' . $attachment->asset->mime_type . ' (' . $this->FileManager->filename2ext($attachment->slug) . ')';
 			$thumbnail = $this->Html->link($thumbnail, '#', array(
 				'escape' => false,
 			));
@@ -262,11 +262,11 @@ $this->append('table-body');
 			$this->Url->build($attachment->asset->path),
 			$attachment->asset->path,
 			array(
-				'onclick' => "Croogo.Wysiwyg.choose('" . $attachment->asset->path . "'); return false;",
+				'onclick' => "Vamshop.Wysiwyg.choose('" . $attachment->asset->path . "'); return false;",
 				'target' => '_blank',
 			)
 		);
-		$urlPopover = $this->Croogo->adminRowAction('', '#', array(
+		$urlPopover = $this->Vamshop->adminRowAction('', '#', array(
 			'class' => 'popovers',
 			'icon' => 'link',
 			'iconSize' => 'small',

@@ -1,6 +1,6 @@
 <?php
 
-$this->loadHelper('Croogo/FileManager.Filemanager');
+$this->loadHelper('Vamshop/FileManager.Filemanager');
 
 $this->extend('/Common/admin_edit');
 
@@ -22,8 +22,8 @@ $this->append('form-start', $this->Form->create($attachment, array(
 )));
 
 $this->append('tab-heading');
-	echo $this->Croogo->adminTab(__d('croogo', 'Attachment'), '#attachment-main');
-	echo $this->Croogo->adminTabs();
+	echo $this->Vamshop->adminTab(__d('croogo', 'Attachment'), '#attachment-main');
+	echo $this->Vamshop->adminTabs();
 $this->end();
 
 $this->append('tab-content');
@@ -50,7 +50,7 @@ $this->append('tab-content');
 		);
 	echo $this->Html->tabEnd();
 
-	echo $this->Croogo->adminTabs();
+	echo $this->Vamshop->adminTabs();
 $this->end();
 
 $this->append('panels');
@@ -83,7 +83,7 @@ $this->append('panels');
 			array('adapter' => $attachment->asset->adapter)
 		);
 	else:
-		$imgUrl = $this->Html->image('Croogo/Core./img/icons/' . $this->FileManager->mimeTypeToImage($attachment->mime_type)) . ' ' . $attachment->mime_type;
+		$imgUrl = $this->Html->image('Vamshop/Core./img/icons/' . $this->FileManager->mimeTypeToImage($attachment->mime_type)) . ' ' . $attachment->mime_type;
 	endif;
 
 	if (preg_match('/^image/', $attachment->asset->mime_type)):

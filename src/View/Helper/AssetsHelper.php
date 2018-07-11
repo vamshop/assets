@@ -2,7 +2,7 @@
 
 namespace Assets\View\Helper;
 
-use Croogo\FileManager\View\Helper\FileManagerHelper;
+use Vamshop\FileManager\View\Helper\FileManagerHelper;
 
 class AssetsHelper extends FileManagerHelper {
 

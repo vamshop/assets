@@ -2,8 +2,8 @@
 
 namespace Assets\Model\Table;
 
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
-class Table extends CroogoTable {
+class Table extends VamshopTable {
 
 }

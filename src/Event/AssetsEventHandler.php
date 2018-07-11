@@ -5,8 +5,8 @@ namespace Assets\Event;
 use Cake\Log\Log;
 use Cake\Event\EventListenerInterface;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Croogo;
-use Croogo\Core\Nav;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Nav;
 
 /**
  * AssetsEventHandler
@@ -23,7 +23,7 @@ class AssetsEventHandler implements EventListenerInterface {
 			'Controller.AssetsAttachment.newAttachment' => array(
 				'callable' => 'onNewAttachment',
 			),
-			'Croogo.setupAdminData' => array(
+			'Vamshop.setupAdminData' => array(
 				'callable' => 'onSetupAdminData',
 			),
 			'Controller.Links.setupLinkChooser' => array(
@@ -98,7 +98,7 @@ class AssetsEventHandler implements EventListenerInterface {
 			)
 		);
 
-		Croogo::mergeConfig('Croogo.linkChoosers', $linkChoosers);
+		Vamshop::mergeConfig('Vamshop.linkChoosers', $linkChoosers);
 	}
 
 

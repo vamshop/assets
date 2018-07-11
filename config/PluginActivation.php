@@ -4,7 +4,7 @@ namespace Assets\Config;
 
 use Cake\ORM\TableRegistry;
 use Cake\Cache\Cache;
-use Croogo\Core\Plugin;
+use Vamshop\Core\Plugin;
 
 /**
  * Assets Activation
@@ -41,10 +41,10 @@ class PluginActivation {
  * @return void
  */
 	public function onActivation(&$controller) {
-		$CroogoPlugin = new Plugin();
-		$result = $CroogoPlugin->migrate('Assets');
+		$VamshopPlugin = new Plugin();
+		$result = $VamshopPlugin->migrate('Assets');
 		if ($result) {
-			$Settings = TableRegistry::get('Croogo/Settings.Settings');
+			$Settings = TableRegistry::get('Vamshop/Settings.Settings');
 			$Settings->write('Assets.installed', 1);
 			Cache::clearGroup('menus');
 		}
@@ -68,7 +68,7 @@ class PluginActivation {
  * @return void
  */
 	public function onDeactivation(&$controller) {
-		$Settings = TableRegistry::get('Croogo/Settings.Settings');
+		$Settings = TableRegistry::get('Vamshop/Settings.Settings');
 		$Settings->deleteKey('Assets.installed');
 	}
 
