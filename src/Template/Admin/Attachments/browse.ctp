@@ -13,7 +13,7 @@ a i[class^=icon]:hover { text-decoration: none; }
 <?php
 $this->end();
 
-$this->Breadcrumbs->add(__d('croogo', 'Attachments'));
+$this->Breadcrumbs->add(__d('vamshop', 'Attachments'));
 
 $this->Vamshop->adminScript([
 	'Vamshop/Wysiwyg.wysiwyg',
@@ -46,7 +46,7 @@ endif;
 
 $this->append('action-buttons');
 	echo $this->Vamshop->adminAction(
-		__d('croogo', 'New Attachment'),
+		__d('vamshop', 'New Attachment'),
 		array_merge(
 			array('controller' => 'Attachments', 'action' => 'add', 'editor' => 1),
 			array('?' => $this->request->query)
@@ -77,14 +77,14 @@ $this->end();
 
 $this->append('table-heading');
 	$tableHeaders = $this->Html->tableHeaders(array(
-		$this->Paginator->sort('AssetsAsset.id', __d('croogo', 'Id')),
+		$this->Paginator->sort('AssetsAsset.id', __d('vamshop', 'Id')),
 		'&nbsp;',
-		$this->Paginator->sort('title', __d('croogo', 'Title')) . ' ' .
-		$this->Paginator->sort('filename', __d('croogo', 'Filename')) . ' ' .
+		$this->Paginator->sort('title', __d('vamshop', 'Title')) . ' ' .
+		$this->Paginator->sort('filename', __d('vamshop', 'Filename')) . ' ' .
 		$this->Paginator->sort('width', __d('assets', 'Width')) . ' ' .
 		$this->Paginator->sort('height', __d('assets', 'Height')) . ' ' .
-		$this->Paginator->sort('filesize', __d('croogo', 'Size')),
-		__d('croogo', 'Actions'),
+		$this->Paginator->sort('filesize', __d('vamshop', 'Size')),
+		__d('vamshop', 'Actions'),
 	));
 	echo $tableHeaders;
 $this->end();
@@ -103,13 +103,13 @@ $this->append('table-body');
 				$actions[] = $this->Html->link('', '#', array(
 					'onclick' => $jActions . "('" . $attachment['AssetsAsset']['path'] . "');",
 					'icon' => 'attach',
-					'tooltip' => __d('croogo', 'Insert')
+					'tooltip' => __d('vamshop', 'Insert')
 				));
 			} else {
 				$actions[] = $this->Html->link('', '#', array(
 					'onclick' => "Vamshop.Wysiwyg.choose('" . $attachment->slug . "');",
 					'icon' => 'attach',
-					'tooltip' => __d('croogo', 'Insert')
+					'tooltip' => __d('vamshop', 'Insert')
 				));
 			}
 		endif;
@@ -137,9 +137,9 @@ $this->append('table-body');
 		) {
 			$actions[] = $this->Vamshop->adminRowAction('', $deleteUrl, array(
 				'icon' => $this->Theme->getIcon('delete'),
-				'tooltip' => __d('croogo', 'Delete Attachment')
+				'tooltip' => __d('vamshop', 'Delete Attachment')
 				),
-				__d('croogo', 'Are you sure?')
+				__d('vamshop', 'Are you sure?')
 			);
 		} elseif (isset($this->request->query['manage']) &&
 			isset($this->request->query['asset_id'])
@@ -147,9 +147,9 @@ $this->append('table-body');
 			$actions[] = $this->Vamshop->adminRowAction('', $deleteAssetUrl, array(
 				'icon' => 'delete',
 				'icon' => $this->Theme->getIcon('delete'),
-				'tooltip' => __d('croogo', 'Delete Attachment version')
+				'tooltip' => __d('vamshop', 'Delete Attachment version')
 				),
-				__d('croogo', 'Are you sure?')
+				__d('vamshop', 'Are you sure?')
 			);
 		}
 
@@ -162,7 +162,7 @@ $this->append('table-body');
 			);
 			$actions[] = $this->Vamshop->adminRowAction('', $resizeUrl, array(
 				'icon' => $this->Theme->getIcon('resize'),
-				'tooltip' => __d('croogo', 'Resize this item'),
+				'tooltip' => __d('vamshop', 'Resize this item'),
 				'data-toggle' => 'resize-asset'
 			));
 		}
@@ -270,7 +270,7 @@ $this->append('table-body');
 			'class' => 'popovers',
 			'icon' => 'link',
 			'iconSize' => 'small',
-			'data-title' => __d('croogo', 'URL'),
+			'data-title' => __d('vamshop', 'URL'),
 			'data-html' => 'true',
 			'data-placement' => 'top',
 			'data-trigger' => 'click|focus',

@@ -50,7 +50,7 @@ Two adapters are provided in the plugin:
 
 	* Local Attachment (Legacy)
 
-	  This adapters mimics the original Croogo behavior, where images are
+	  This adapters mimics the original Vamshop behavior, where images are
 	  stored under `APP/webroot/uploads` directory.
 
 # Dependencies

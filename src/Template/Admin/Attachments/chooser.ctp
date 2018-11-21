@@ -1,10 +1,10 @@
 <div class="<?php echo $this->Theme->getCssClass('row'); ?>">
 	<div class="<?php echo $this->Theme->getCssClass('columnFull'); ?>">
 	<?php
-		echo __d('croogo', 'Sort by:');
-		echo ' ' . $this->Paginator->sort('id', __d('croogo', 'Id'), array('class' => 'sort'));
-		echo ', ' . $this->Paginator->sort('title', __d('croogo', 'Title'), array('class' => 'sort'));
-		echo ', ' . $this->Paginator->sort('created', __d('croogo', 'Created'), array('class' => 'sort'));
+		echo __d('vamshop', 'Sort by:');
+		echo ' ' . $this->Paginator->sort('id', __d('vamshop', 'Id'), array('class' => 'sort'));
+		echo ', ' . $this->Paginator->sort('title', __d('vamshop', 'Title'), array('class' => 'sort'));
+		echo ', ' . $this->Paginator->sort('created', __d('vamshop', 'Created'), array('class' => 'sort'));
 	?>
 	</div>
 </div>
@@ -32,16 +32,16 @@
 				));
 
 				$popup = array();
-				$type = __d('croogo', $attachment->asset->mime_type);
+				$type = __d('vamshop', $attachment->asset->mime_type);
 
 				if (preg_match('/^image/', $attachment->asset->mime_type)):
 					$popup[] = array(
-						__d('croogo', 'Preview'),
+						__d('vamshop', 'Preview'),
 						[$this->Html->image($attachment->asset->path, ['class' => 'img-thumbnail']), ['class' => 'nowrap']]
 					);
 				endif;
 				$popup[] = array(
-					__d('croogo', 'Created'),
+					__d('vamshop', 'Created'),
 					[$this->Time->nice($attachment->asset->created), ['class' => 'nowrap']]
 				);
 				$popup = $this->Html->tag('table', $this->Html->tableCells($popup), array(

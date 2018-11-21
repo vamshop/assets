@@ -107,7 +107,7 @@ class AssetsEventHandler implements EventListenerInterface {
  */
 	public function onSetupAdminData($event) {
 		Nav::add('media.children.attachments', array(
-			'title' => __d('croogo', 'Attachments'),
+			'title' => __d('vamshop', 'Attachments'),
 			'url' => array(
 				'prefix' => 'admin',
 				'plugin' => 'Assets',

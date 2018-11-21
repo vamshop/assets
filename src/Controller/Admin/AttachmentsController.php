@@ -74,7 +74,7 @@ class AttachmentsController extends AppController {
  * @access public
  */
 	public function index() {
-		$this->set('title_for_layout', __d('croogo', 'Attachments'));
+		$this->set('title_for_layout', __d('vamshop', 'Attachments'));
 
 		$this->set('searchFields', [
 			'search',
@@ -171,7 +171,7 @@ class AttachmentsController extends AppController {
  * @access public
  */
 	public function add() {
-		$this->set('title_for_layout', __d('croogo', 'Add Attachment'));
+		$this->set('title_for_layout', __d('vamshop', 'Add Attachment'));
 
 		if ($this->request->query('editor')) {
 			$this->viewBuilder()->setLayout('admin_popup');
@@ -185,7 +185,7 @@ class AttachmentsController extends AppController {
 				$errors = $entity->errors();
 			} else {
 				$errors = [
-					'file' => __d('croogo', 'Upload failed. Please ensure size does not exceed the server limit.')
+					'file' => __d('vamshop', 'Upload failed. Please ensure size does not exceed the server limit.')
 				];
 			}
 
@@ -233,7 +233,7 @@ class AttachmentsController extends AppController {
 			}
 
 			if ($attachment) {
-				$this->Flash->success(__d('croogo', 'The Attachment has been saved'));
+				$this->Flash->success(__d('vamshop', 'The Attachment has been saved'));
 				$url = array();
 				if (isset($saved->asset->asset_usage[0])) {
 					$usage = $saved->asset->asset_usage[0];
@@ -249,7 +249,7 @@ class AttachmentsController extends AppController {
 				}
 				return $this->redirect($url);
 			} else {
-				$this->Flash->error(__d('croogo', 'The Attachment could not be saved. Please, try again.'));
+				$this->Flash->error(__d('vamshop', 'The Attachment could not be saved. Please, try again.'));
 			}
 		} else {
 			// noop
@@ -267,7 +267,7 @@ class AttachmentsController extends AppController {
  * @access public
  */
 	public function edit($id = null) {
-		$this->set('title_for_layout', __d('croogo', 'Edit Attachment'));
+		$this->set('title_for_layout', __d('vamshop', 'Edit Attachment'));
 
 		if (isset($this->request->params['named']['editor'])) {
 			$this->layout = 'admin_popup';
@@ -282,7 +282,7 @@ class AttachmentsController extends AppController {
 		}
 
 		if (!$id && empty($this->request->data)) {
-			$this->Flash->error(__d('croogo', 'Invalid Attachment'));
+			$this->Flash->error(__d('vamshop', 'Invalid Attachment'));
 			return $this->redirect($redirect);
 		}
 		$attachment = $this->Attachments->get($id, [
@@ -293,10 +293,10 @@ class AttachmentsController extends AppController {
 		if (!empty($this->request->data)) {
 			$attachment = $this->Attachments->patchEntity($attachment, $this->request->data());
 			if ($this->Attachments->save($attachment)) {
-				$this->Flash->success(__d('croogo', 'The Attachment has been saved'));
+				$this->Flash->success(__d('vamshop', 'The Attachment has been saved'));
 				return $this->redirect($redirect);
 			} else {
-				$this->Flash->error(__d('croogo', 'The Attachment could not be saved. Please, try again.'));
+				$this->Flash->error(__d('vamshop', 'The Attachment could not be saved. Please, try again.'));
 			}
 		}
 		$this->set(compact('attachment'));
@@ -311,7 +311,7 @@ class AttachmentsController extends AppController {
  */
 	public function delete($id = null) {
 		if (!$id) {
-			$this->Flash->error(__d('croogo', 'Invalid id for Attachment'));
+			$this->Flash->error(__d('vamshop', 'Invalid id for Attachment'));
 			return $this->redirect(array('action' => 'index'));
 		}
 
@@ -327,10 +327,10 @@ class AttachmentsController extends AppController {
 		$this->Attachments->connection()->begin();
 		if ($this->Attachments->delete($attachment)) {
 			$this->Attachments->connection()->commit();
-			$this->Flash->success(__d('croogo', 'Attachment deleted'));
+			$this->Flash->success(__d('vamshop', 'Attachment deleted'));
 			return $this->redirect($redirect);
 		} else {
-			$this->Flash->error(__d('croogo', 'Invalid id for Attachment'));
+			$this->Flash->error(__d('vamshop', 'Invalid id for Attachment'));
 			return $this->redirect($redirect);
 		}
 	}

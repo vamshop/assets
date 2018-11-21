@@ -120,7 +120,7 @@ $cancelIcon = $this->Html->icon('delete');
                 <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
                 <button class="btn btn-sm btn-warning cancel"
-                    title="<?= __d('croogo', 'Cancel') ?>"
+                    title="<?= __d('vamshop', 'Cancel') ?>"
                 >
                     <?= $cancelIcon ?>
                 </button>

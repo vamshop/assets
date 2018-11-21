@@ -5,7 +5,7 @@ $this->loadHelper('Vamshop/FileManager.Filemanager');
 $this->extend('/Common/admin_edit');
 
 $this->Breadcrumbs
-	->add(__d('croogo', 'Attachments'), array('plugin' => 'Assets', 'controller' => 'Attachments', 'action' => 'index'))
+	->add(__d('vamshop', 'Attachments'), array('plugin' => 'Assets', 'controller' => 'Attachments', 'action' => 'index'))
 	->add($attachment->title, $this->request->getUri()->getPath());
 
 if ($this->layout === 'admin_popup'):
@@ -22,7 +22,7 @@ $this->append('form-start', $this->Form->create($attachment, array(
 )));
 
 $this->append('tab-heading');
-	echo $this->Vamshop->adminTab(__d('croogo', 'Attachment'), '#attachment-main');
+	echo $this->Vamshop->adminTab(__d('vamshop', 'Attachment'), '#attachment-main');
 	echo $this->Vamshop->adminTabs();
 $this->end();
 
@@ -31,20 +31,20 @@ $this->append('tab-content');
 		echo $this->Form->input('id');
 
 		echo $this->Form->input('title', array(
-			'label' => __d('croogo', 'Title'),
+			'label' => __d('vamshop', 'Title'),
 		));
 		echo $this->Form->input('excerpt', array(
-			'label' => __d('croogo', 'Excerpt'),
+			'label' => __d('vamshop', 'Excerpt'),
 		));
 
 		echo $this->Form->input('file_url', array(
-			'label' => __d('croogo', 'File URL'),
+			'label' => __d('vamshop', 'File URL'),
 			'value' => $this->Url->build($attachment->asset->path, true),
 			'readonly' => 'readonly')
 		);
 
 		echo $this->Form->input('file_type', array(
-			'label' => __d('croogo', 'Mime Type'),
+			'label' => __d('vamshop', 'Mime Type'),
 			'value' => $attachment->asset->mime_type,
 			'readonly' => 'readonly')
 		);
@@ -64,12 +64,12 @@ $this->append('panels');
 			array('?' => $this->request->query)
 		);
 	}
-	echo $this->Html->beginBox(__d('croogo', 'Publishing')) .
-		$this->Form->button(__d('croogo', 'Save'), [
+	echo $this->Html->beginBox(__d('vamshop', 'Publishing')) .
+		$this->Form->button(__d('vamshop', 'Save'), [
 			'class' => 'btn-outline-success',
 		]) . ' ' .
 		$this->Html->link(
-			__d('croogo', 'Cancel'),
+			__d('vamshop', 'Cancel'),
 			$redirect,
 			['class' => 'cancel btn btn-outline-danger']
 		);
@@ -87,7 +87,7 @@ $this->append('panels');
 	endif;
 
 	if (preg_match('/^image/', $attachment->asset->mime_type)):
-		echo $this->Html->beginBox(__d('croogo', 'Preview')) .
+		echo $this->Html->beginBox(__d('vamshop', 'Preview')) .
 			$this->Html->link($imgUrl, $attachment->asset->path, array(
 				'data-toggle' => 'lightbox',
 			));

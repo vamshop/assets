@@ -82,10 +82,10 @@ if (!isset($attachments)):
 endif;
 
 $headers = array(
-	__d('croogo', 'Preview'),
-	__d('croogo', 'Type'),
-	__d('croogo', 'Size'),
-	__d('croogo', 'Actions'),
+	__d('vamshop', 'Preview'),
+	__d('vamshop', 'Type'),
+	__d('vamshop', 'Size'),
+	__d('vamshop', 'Actions'),
 );
 
 //if (!$this->helpers()->loaded('AssetsImage')) {

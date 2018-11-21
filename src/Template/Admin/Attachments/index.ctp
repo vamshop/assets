@@ -5,7 +5,7 @@ $this->Vamshop->adminScript('Assets.admin');
 $this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs
-	->add(__d('croogo', 'Attachments'), $this->request->getUri()->getPath());
+	->add(__d('vamshop', 'Attachments'), $this->request->getUri()->getPath());
 
 if (!empty($this->request->query)) {
 	$query = $this->request->query;
@@ -16,7 +16,7 @@ if (!empty($this->request->query)) {
 $this->append('action-buttons');
 
 echo $this->Vamshop->adminAction(
-	__d('croogo', 'New ' . __d('croogo', 'Attachment')),
+	__d('vamshop', 'New ' . __d('vamshop', 'Attachment')),
 	array_merge(array('?' => $query), array('action' => 'add')),
 	array('button' => 'success')
 );
@@ -34,11 +34,11 @@ $detailUrl = array(
 
 $this->append('table-heading');
 	$tableHeaders = $this->Html->tableHeaders(array(
-		$this->Paginator->sort('id', __d('croogo', 'Id')),
+		$this->Paginator->sort('id', __d('vamshop', 'Id')),
 		'&nbsp;',
-		$this->Paginator->sort('title', __d('croogo', 'Title')),
-		__d('croogo', 'Versions'),
-		__d('croogo', 'Actions'),
+		$this->Paginator->sort('title', __d('vamshop', 'Title')),
+		__d('vamshop', 'Versions'),
+		__d('vamshop', 'Actions'),
 	));
 
 	echo $this->Html->tag('thead', $tableHeaders);
@@ -74,7 +74,7 @@ $this->append('table-body');
 
 			$actions[] = $this->Vamshop->adminRowAction('', $resizeUrl, array(
 				'icon' => $this->Theme->getIcon('resize'),
-				'tooltip' => __d('croogo', 'Resize this item'),
+				'tooltip' => __d('vamshop', 'Resize this item'),
 				'data-toggle' => 'resize-asset'
 			));
 		}
@@ -85,15 +85,15 @@ $this->append('table-body');
 		);
 		$actions[] = $this->Vamshop->adminRowAction('', $editUrl, array(
 			'icon' => 'update',
-			'tooltip' => __d('croogo', 'Edit this item'),
+			'tooltip' => __d('vamshop', 'Edit this item'),
 		));
 		$deleteUrl = array('action' => 'delete', $attachment->id);
 		$deleteUrl = array_merge(array('?' => $query), $deleteUrl);
 		$actions[] = $this->Vamshop->adminRowAction('', $deleteUrl, array(
 			'icon' => 'delete',
-			'tooltip' => __d('croogo', 'Remove this item'),
+			'tooltip' => __d('vamshop', 'Remove this item'),
 			'escapeTitle' => false,
-		), __d('croogo', 'Are you sure?'));
+		), __d('vamshop', 'Are you sure?'));
 
 		$path = $attachment->asset->path;
 		switch ($mimeType) {

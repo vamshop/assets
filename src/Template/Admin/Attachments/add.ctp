@@ -34,8 +34,8 @@ $indexUrl = [
 
 if (!$this->request->query('editor')):
 	$this->Breadcrumbs
-		->add(__d('croogo', 'Attachments'), $indexUrl)
-		->add(__d('croogo', 'Upload'), $this->request->getUri()->getPath());
+		->add(__d('vamshop', 'Attachments'), $indexUrl)
+		->add(__d('vamshop', 'Upload'), $this->request->getUri()->getPath());
 endif;
 
 if ($this->layout === 'admin_popup'):
@@ -56,7 +56,7 @@ $model = isset($this->request->query['model']) ? $this->request->query['model'] 
 $foreignKey = isset($this->request->query['foreign_key']) ? $this->request->query['foreign_key'] : null;
 
 $this->append('tab-heading');
-	echo $this->Vamshop->adminTab(__d('croogo', 'Upload'), '#attachment-upload');
+	echo $this->Vamshop->adminTab(__d('vamshop', 'Upload'), '#attachment-upload');
 $this->end();
 
 $this->append('tab-content');
@@ -90,7 +90,7 @@ $this->append('tab-content');
 			'options' => StorageManager::configured(),
 		));
 		echo $this->Form->input('excerpt', array(
-			'label' => __d('croogo', 'Caption'),
+			'label' => __d('vamshop', 'Caption'),
 		));
 		echo $this->Form->input('title');
 		echo $this->Form->input('status', array(
@@ -115,8 +115,8 @@ $this->append('panels');
 			array('?' => $this->request->query)
 		);
 	}
-	echo $this->Html->beginBox(__d('croogo', 'Publishing')) .
-		$this->Form->button(__d('croogo', 'Upload'), array(
+	echo $this->Html->beginBox(__d('vamshop', 'Publishing')) .
+		$this->Form->button(__d('vamshop', 'Upload'), array(
 			'icon' => 'upload',
 			'button' => 'primary',
 			'class' => 'start btn-success',
@@ -124,7 +124,7 @@ $this->append('panels');
 			'id' => 'start_upload',
 		)) .
 		$this->Form->end() . ' ' .
-		$this->Html->link(__d('croogo', 'Cancel'), $redirect, array(
+		$this->Html->link(__d('vamshop', 'Cancel'), $redirect, array(
 			'class' => 'btn btn-danger',
 		));
 	echo $this->Html->endBox();
